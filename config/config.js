@@ -3,6 +3,6 @@ dotenv.config();
 
 export default {
     port: process.env.PORT,
-    dbUrl: process.env.MONGO_URL
+
 };
 
