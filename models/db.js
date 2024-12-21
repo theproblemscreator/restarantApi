@@ -6,7 +6,8 @@ const dbName = 'globaldb';
 const dbConfig = {
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
+    
 };
 
 const createDatabaseIfNotExists = async () => {
