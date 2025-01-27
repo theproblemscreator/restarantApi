@@ -44,4 +44,8 @@ public class UserService {
 
 		}).orElse(ResponseEntity.notFound().build());
 	}
+	
+	public boolean existsByEmail(String email) {
+	    return repository.findByEmail(email).isPresent();
+	}
 }
