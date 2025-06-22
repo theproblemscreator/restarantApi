@@ -7,7 +7,7 @@ const VerifyToken = (req,res,next)=>{
         res.status(401).json({message : "Token is missing"});
     }
 
-    jwt.verify(token , process.env.SECRET-KEY , {expiresIn : '1h'} , (err,user)=>{
+    jwt.verify(token , process.env.SECRET_KEY , {expiresIn : '1h'} , (err,user)=>{
        
         if(err) res.status(403).json({message  : "In-Valid Token"});
         
