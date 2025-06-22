@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
-
+import dotenv from 'dotenv'
+dotenv.config();
 export const LoginController = (req, res) => {
 
     const {email,password} = req.body;
@@ -16,7 +17,7 @@ export const LoginController = (req, res) => {
 
     if(!user) res.status(401).json({message : "User Is Not Found"});
 
-     const token = jwt.sign({id:user.id , email : user.email, name  : user.name, role:user.role}, process.env.SECRET-KEY, {expiresIn : '1h'}) ;
+     const token = jwt.sign({id:user.id , email : user.email, name  : user.name, role:user.role}, process.env.SECRET_KEY, {expiresIn : '1h'}) ;
 
      res.json({
         name : user.name,
@@ -24,5 +25,4 @@ export const LoginController = (req, res) => {
         token
      });
 
-    res.status(200).json({ message: "Login Controller" });
 }
