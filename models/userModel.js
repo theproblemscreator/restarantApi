@@ -10,7 +10,11 @@ const User = sequelize.define("User", {
       unique: true,
       allowNull: false
     },
-  
+
+    mobile : {
+      type : DataTypes.STRING,
+      unique : true
+    }
   });
 
 export default User;
